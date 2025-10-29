@@ -159,14 +159,10 @@ tasks:
   - action: query_database
     file: ./resources/[qbx]/qbx_vehicles/vehicles.sql
 
-  - action: download_file
-    path: ./tmp/qbx_management.zip
-    url: https://github.com/qbox-project/qbx_management/releases/latest/download/qbx_management.zip
-  - action: unzip
-    dest: ./resources/[qbx]
-    src: ./tmp/qbx_management.zip
-  - action: query_database
-    file: ./resources/[qbx]/qbx_management/qbx_management.sql
+  - action: download_github
+    dest: ./resources/[qbx]/qbx_management
+    ref: main
+    src: https://github.com/qbox-project/qbx_management
 
   - action: download_file
     path: ./tmp/qbx_diving.zip
